@@ -1,44 +1,43 @@
 <?php
 
-for($i=0;$i<10;$i++){
-    var_dump($i);
+function hello() {
+    var_dump('hello');
 }
 
-for($i=9;$i>=0;$i--){
-    var_dump($i);
+hello();
+hello();
+hello();
+hello();
+
+function sum($a, $b) {
+    return $a+$b;
 }
 
-for($i=1;$i<1_000_000;$i*=2){
-    var_dump($i);
+var_dump(sum(1,4));
+$answer = sum(6,5);
+
+function biggrThanTen($n) {
+    if($n > 10){
+        return 'Bigger';
+    }
+    return 'Smaller';
+    var_dump($args);
+    
 }
 
-$start = time();
-$i = 0;
-while(time()<$start+1){
-    $i++;
-}
-var_dump($i);
-$start = time();
-for($i=0;time()<$start+1;$i++){
+var_dump(biggrThanTen(11));
+var_dump(biggrThanTen(4));
 
+function anything(...$args) {
+    var_dump($args);
 }
-var_dump($i);
+anything(1, 2, 3, 4, 5, 6, 7);
 
-$i = 10;
-while($i<10){
-    var_dump('WHILE');
+function recursive($n){
+    if($n<10){
+        var_dump($n);
+        recursive($n+1);
+    }
 }
 
-do {
-    var_dump('DO');
-} while($i<10);
-
-$array = ['Apples', 'Cherries', 'Pears', 'Apricot'];
-
-foreach($array as $fruit){
-    var_dump($fruit);
-}
-
-foreach($array as $key=>$fruit){
-    var_dump("$key=>$fruit");
-}
+recursive(0);
