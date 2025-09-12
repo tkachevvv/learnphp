@@ -10,27 +10,20 @@ class Box {
     }
 }
 
-$num1 = 1;
-$num2 = $num1;
-$num2 = 2;
-var_dump($num1);
+class MetalBox extends Box {
+    public $material = 'Metal';
+    public $weightPerUnit = 2;
 
-$box = new Box();
-$box->width = 1;
-$box2 = clone $box1;
-$box2->width = 2;
-var_dump($box1, $box2);
-var_dump($box1->width);
-
-$array = [1, 2, 3, 4, 5];
-
-for($i=0;$i<count($array);$i++){
-    $num = &$array[$i];
-    $num *= 2;
+    public function mass() {
+        return $this->volume() * $this->weightPerUnit;
+    } 
 }
 
-foreach($array as $num){
-    $num *= 2;
-}
+$metalBox1 = new MetalBox();
+$metalBox1->weight = 10;
+$metalBox1->height = 20;
+$metalBox1->lenght = 30;
 
-var_dump($array);
+var_dump($metalBox1->volume());
+var_dump($metalBox1->mass());
+var_dump($metalBox1);
