@@ -1,19 +1,44 @@
 <?php
-$i = 4;
-if($i > 4){
-    var_dump('bigger');
-} elseif ($i == 10){
-    var_dump('equals');
-} else {
-    var_dump('smaller');
+
+for($i=0;$i<10;$i++){
+    var_dump($i);
 }
 
-$day = (int) data('w', strtotime('8.09.2025'));
+for($i=9;$i>=0;$i--){
+    var_dump($i);
+}
 
-var_dump($day);
+for($i=1;$i<1_000_000;$i*=2){
+    var_dump($i);
+}
 
-if($day == 1) {
-    var_dump('Esmaspaev') 
-} else if($day == 2) {
-    
+$start = time();
+$i = 0;
+while(time()<$start+1){
+    $i++;
+}
+var_dump($i);
+$start = time();
+for($i=0;time()<$start+1;$i++){
+
+}
+var_dump($i);
+
+$i = 10;
+while($i<10){
+    var_dump('WHILE');
+}
+
+do {
+    var_dump('DO');
+} while($i<10);
+
+$array = ['Apples', 'Cherries', 'Pears', 'Apricot'];
+
+foreach($array as $fruit){
+    var_dump($fruit);
+}
+
+foreach($array as $key=>$fruit){
+    var_dump("$key=>$fruit");
 }
